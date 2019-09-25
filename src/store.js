@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     products: [],
-    errors: []
+    errors: [],
+    cart: []
   },
   mutations: {
     GET_PRODUCTS(state, products) {
@@ -18,6 +19,12 @@ export default new Vuex.Store({
     },
     GET_PRODUCTS_ERROR(state, error) {
       state.errors = [error, ...state.errors];
+    },
+    UPDATE_CART(state, cart) {
+      state.cart = cart;
+    },
+    REMOVE_ONE_FROM_CART(state, cart) {
+      state.cart = cart;
     }
   },
   actions: {
@@ -34,10 +41,47 @@ export default new Vuex.Store({
         });
     },
     createProduct({ commit }, product) {
-      productService.createProduct(product).then(res => {
+      productService.createProduct(product).then(() => {
         commit("CREATE_PRODUCT", product);
       })
         .catch(err => console.log(err.message));
+    },
+    updateCart({ commit }, product) {
+      productService.addToCart(product).then(() => {
+        commit("UPDATE_CART", JSON.parse(localStorage.getItem("cart")));
+      })
+        .catch(err => console.log(err.message));
+    },
+    removeOneFromCart({ commit }, product) {
+      return productService
+        .removeOneFromCart(product)
+        .then(() => {
+          commit(
+            "REMOVE_ONE_FROM_CART",
+            JSON.parse(localStorage.getItem("cart"))
+          );
+        })
+        .catch(err => console.error(err));
+    },
+    getCartFromStorage({ commit }) {
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      if (!cart) return;
+      commit(
+        "UPDATE_CART",
+        JSON.parse(localStorage.getItem("cart"))
+      );
+    }
+  },
+  getters: {
+    getCart(state) {
+      return state.cart;
+    },
+    getNumberArticlesInCart(state) {
+      if (!state.cart.products) return 0;
+      const numberArticles = state.cart.products.reduce((acc, curr) => {
+        return acc + curr.quantity;
+      }, 0);
+      return numberArticles;
     }
   }
 });
