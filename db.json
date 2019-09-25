@@ -16,7 +16,7 @@
       "id": 9780596517748,
       "title": "JavaScript: The Good Parts",
       "author": {
-        "name": "Crockford",
+        "lastName": "Crockford",
         "firstName": "Douglas"
       },
       "publisher": "O'Reilly Media",
@@ -28,7 +28,7 @@
       "id": 9781449331818,
       "title": "Learning JavaScript Design Patterns",
       "author": {
-        "name": "Osmani",
+        "lastName": "Osmani",
         "firstName": "Addy"
       },
       "publisher": "O'Reilly Media",
@@ -40,7 +40,7 @@
       "id": 9781593279509,
       "title": "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming",
       "author": {
-        "name": "Haverbeke",
+        "lastName": "Haverbeke",
         "firstName": "Marijn"
       },
       "publisher": "No Starch Press",
@@ -52,7 +52,7 @@
       "id": 9781617292859,
       "title": "Secrets of the JavaScript Ninja, Second Edition",
       "author": {
-        "name": "Resig",
+        "lastName": "Resig",
         "firstName": "John"
       },
       "publisher": "Manning Publications",
@@ -64,7 +64,7 @@
       "id": 9780132350884,
       "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
       "author": {
-        "name": "Martin",
+        "lastName": "Martin",
         "firstName": "Robert C."
       },
       "publisher": "Prentice Hall",
@@ -73,23 +73,23 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/41TINACY3hL._SL200_.jpg"
     },
     {
-      "id": 9780132350884,
+      "id": 9780132350886,
       "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
       "author": [
         {
-          "name": "Gamma",
+          "lastName": "Gamma",
           "firstName": "Erich "
         },
         {
-          "name": "Helm",
+          "lastName": "Helm",
           "firstName": "Richard "
         },
         {
-          "name": "Johnson",
+          "lastName": "Johnson",
           "firstName": "Ralph "
         },
         {
-          "name": "Vlissides",
+          "lastName": "Vlissides",
           "firstName": "John"
         }
       ],
@@ -97,6 +97,42 @@
       "year": 2008,
       "price": 34.47,
       "image": "https://images-na.ssl-images-amazon.com/images/I/51szD9HC9pL._SL200_.jpg"
+    },
+    {
+      "title": "",
+      "author": {
+        "firstName": "",
+        "lastName": ""
+      },
+      "publisher": "",
+      "year": "",
+      "price": "",
+      "image": "",
+      "id": 9781617292860
+    },
+    {
+      "title": "greet",
+      "author": {
+        "firstName": "etetet",
+        "lastName": "eryery"
+      },
+      "publisher": "eryey",
+      "year": "2020",
+      "price": "3.0",
+      "image": "image.png",
+      "id": "12345"
+    },
+    {
+      "title": "gtyjghk",
+      "author": {
+        "firstName": "fhkhl",
+        "lastName": "gkyuluim"
+      },
+      "publisher": "jyukuil",
+      "year": "2016",
+      "price": "10",
+      "image": "image3.png",
+      "id": "4556576"
     }
   ]
 }

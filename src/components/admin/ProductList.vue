@@ -14,13 +14,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>aze</td>
-          <td>qsd</td>
-          <td>xwc</td>
-          <td>2019</td>
-          <td>image</td>
+        <tr v-for="product in products" :key="product.id">
+          <th scope="row">{{ product.id }}</th>
+          <td>{{ product.title }}</td>
+          <td>{{ product.author.firstName }} {{ product.author.lastName }}</td>
+          <td>{{ product.publisher }}</td>
+          <td>{{ product.year }}</td>
+          <td>i{{ product.image }}</td>
           <td>edit</td>
           <td>delete</td>
         </tr>
@@ -30,7 +30,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    products() {
+      return this.$store.state.products;
+    }
+  },
+  created() {
+    this.$store.dispatch("getProducts");
+  }
+};
 </script>
 
 <style scoped></style>
